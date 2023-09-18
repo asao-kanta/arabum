@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>girls</h1>
+
+<div id="urls">
+  <table border="1">
+    <tr>
+      <th>名前</th>
+      <% @girls_day.each do |date| %>
+        <th><%= date %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% @girls_time.zip(@girls_name) do |time,name| %>
+      <tr>
+        <td><%= name %></td>
+        <% time.each do |t| %>
+        <td><%= t.join %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tr>
+  </table>
+</div>
+
+<%= link_to "urls", urls_path %>
+
