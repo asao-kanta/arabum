@@ -2,13 +2,19 @@
 
 <h1>Urls</h1>
 
-<div id="urls">
+<div id="urls" class="border">
   <% @urls.each do |url| %>
-    <%= render url %>
-    <p>
-      <%= link_to "Show this url", url %>
-    </p>
+  <div class="card mb-4 border">
+    <div class="card-body">
+      <%= render url %>
+      <!--<button type="button" class="btn btn-outline-secondary">-->
+        <%= link_to "Show this url", url %>
+      <!--</button>-->
+    </div>
+  </div>
   <% end %>
 </div>
-
+<button type="button" class="btn btn-outline-secondary">
 <%= link_to "New url", new_url_path %>
+</button>
+
