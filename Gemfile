@@ -28,6 +28,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'mechanize'
 gem "bcrypt"
+gem 'slim-rails'
+gem 'html2slim'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

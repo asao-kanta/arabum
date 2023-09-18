@@ -1,6 +1,5 @@
 class GirlController < ApplicationController
-  before_action :set_url, only: %i[ show edit update destroy ]
-  before_action :logged_in_user, only: %i[:index, :show, :new, :edit, :create, :update, :destroy]
+  before_action :logged_in_user, only: [:index]
   def index
     @urls = Url.all
     logger.debug(@urls)
@@ -44,15 +43,6 @@ class GirlController < ApplicationController
   end
   
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_url
-      @url = Url.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def url_params
-      params.require(:url).permit(:name, :link)
-    end
     def logged_in_user
       unless logged_in?
         flash[:danger] = "Please log in."
