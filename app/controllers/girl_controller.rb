@@ -8,8 +8,10 @@ class GirlController < ApplicationController
     for i in 0..@urls.length-1
       logger.debug(@urls[i])
       agent = Mechanize.new
-      agent.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
+      agent.user_agent = "ACME-Examplebot/1.0"
       page = agent.get(@urls[i][:link])
+      logger.debug(page)
+      puts page
       elements = page.search('div#girlprofile_sukkin ul li dl')
       if i==0
         @girls_day = elements.search("dt").inner_text.split
