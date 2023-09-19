@@ -8,7 +8,7 @@ class GirlController < ApplicationController
     for i in 0..@urls.length-1
       logger.debug(@urls[i])
       agent = Mechanize.new
-      agent.user_agent = "ACME-Examplebot/1.0"
+      agent.user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
       page = agent.get(@urls[i][:link])
       elements = page.search('div#girlprofile_sukkin ul li dl')
       if i==0
